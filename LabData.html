@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratory Graphs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f7fa;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            background-color: #00695c; /* Teal color */
+            color: white;
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+        }
+        .search-container {
+            margin: 20px 0;
+            width: 300px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #00796b; /* Medium teal */
+            border-radius: 5px;
+        }
+        .suggestions {
+            background-color: white;
+            border: 1px solid #00796b;
+            border-radius: 5px;
+            max-height: 150px;
+            overflow-y: auto;
+            position: absolute;
+            width: 300px;
+            z-index: 1000;
+        }
+        .suggestion {
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .suggestion:hover {
+            background-color: #c8e6c9; /* Light green */
+        }
+        .graph-container {
+            margin-top: 20px;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Laboratory Graphs</h1>
+    </header>
+    <div class="search-container">
+        <input type="text" id="search" placeholder="Search Laboratories..." oninput="filterSuggestions()">
+        <div id="suggestions" class="suggestions"></div>
+    </div>
+    <div class="graph-container" id="graph-container">
+        <!-- Placeholder for the graph -->
+        <p><h2>Search a laboratory to view its graph.</h2></p>
+    </div>
+    <footer>
+        <p></p>
+    </footer>
+
+    <script>
+        const laboratories = [
+            "ALT",
+            "AMS",
+            "AMY",
+            "ASC",
+            "ASK",
+            "AVI",
+            "AZR",
+            "BAL",
+            "BHD",
+            "BKT",
+            "BME",
+            "BMW",
+            "BRW",
+            "BSC",
+            "CBA",
+            "CGO",
+            "CHR",
+            "CIB",
+            "CMO",
+            "CPT"
+        ];
+
+        function filterSuggestions() {
+            const input = document.getElementById('search').value.toLowerCase();
+            const suggestionsDiv = document.getElementById('suggestions');
+            suggestionsDiv.innerHTML = ''; // Clear previous suggestions
+
+            if (input) {
+                const filteredLabs = laboratories.filter(lab => lab.toLowerCase().includes(input));
+                filteredLabs.forEach(lab => {
+                    const suggestionDiv = document.createElement('div');
+                    suggestionDiv.classList.add('suggestion');
+                    suggestionDiv.textContent = lab;
+                    suggestionDiv.onclick = () => generateGraph(lab);
+                    suggestionsDiv.appendChild(suggestionDiv);
+                });
+            }
+        }
+
+        function generateGraph(lab) {
+            const graphContainer = document.getElementById('graph-container');
+            
+            if (lab === "ALT") {
+                window.location.href = "ALTLab.html"; // Redirect to ALTLab.html for ALT
+            } else {
+                graphContainer.innerHTML = `<h2>Graph for ${lab}</h2>
+                                            <p>Graph data for ${lab} is currently not available.</p>`;
+            }
+
+            if (lab === "AMS") {
+                window.location.href = "AMSLab.html"; // Redirect to AMSLab.html for AMS
+            } else {
+                graphContainer.innerHTML = `<h2>Graph for ${lab}</h2>
+                                            <p>Graph data for ${lab} is currently not available.</p>`;
+            }
+
+            
+            if (lab === "AMY") {
+                window.location.href = "AMYLab.html"; // Redirect to AMYLab.html for AMY
+            } else {
+                graphContainer.innerHTML = `<h2>Graph for ${lab}</h2>
+                                            <p>Graph data for ${lab} is currently not available.</p>`;
+            }
+
+            if (lab === "ASC") {
+                window.location.href = "ASCLab.html"; // Redirect to ASCLab.html for ASC
+            } else {
+                graphContainer.innerHTML = `<h2>Graph for ${lab}</h2>
+                                            <p>Graph data for ${lab} is currently not available.</p>`;
+            }
+
+            if (lab === "ASK") {
+                window.location.href = "ASKLab.html"; // Redirect to ASKLab.html for ASK
+            } else {
+                graphContainer.innerHTML = `<h2>Graph for ${lab}</h2>
+                                            <p>Graph data for ${lab} is currently not available.</p>`;
+            }
+
+            if (lab === "AVI") {
+                window.location.href = "AVILab.html"; // Redirect to AVILab.html for AVI
+            } else {
+                graphContainer.innerHTML = `<h2>Graph for ${lab}</h2>
+                                            <p>Graph data for ${lab} is currently not available.</p>`;
+            }
+
+            if (lab === "AZR") {
+                window.location.href = "AZRLab.html"; // Redirect to AZRLab.html for AZR
+            } else {
+                graphContainer.innerHTML = `<h2>Graph for ${lab}</h2>
+                                            <p>Graph data for ${lab} is currently not available.</p>`;
+            }
+
+            if (lab === "BAL") {
+                window.location.href = "BALLab.html"; // Redirect to BALLab.html for BAL
+            } else {
+                graphContainer.innerHTML = `<h2>Graph for ${lab}</h2>
+                                            <p>Graph data for ${lab} is currently not available.</p>`;
+            }
+
+            if (lab === "BHD") {
+                window.location.href = "BHDLab.html"; // Redirect to BHDLab.html for BHD
+            } else {
+                graphContainer.innerHTML = `<h2>Graph for ${lab}</h2>
+                                            <p>Graph data for ${lab} is currently not available.</p>`;
+            }
+
+            if (lab === "BKT") {
+                window.location.href = "BKTLab.html"; // Redirect to BKTLab.html for BKT
+            } else {
+                graphContainer.innerHTML = `<h2>Graph for ${lab}</h2>
+                                            <p>Graph data for ${lab} is currently not available.</p>`;
+            }
+
+            if (lab === "BME") {
+                window.location.href = "BMELab.html"; // Redirect to BMELab.html for BME
+            } else {
+                graphContainer.innerHTML = `<h2>Graph for ${lab}</h2>
+                                            <p>Graph data for ${lab} is currently not available.</p>`;
+            }
+
+            if (lab === "BMW") {
+                window.location.href = "BMWLab.html"; // Redirect to BMWTLab.html for BMW
+            } else {
+                graphContainer.innerHTML = `<h2>Graph for ${lab}</h2>
+                                            <p>Graph data for ${lab} is currently not available.</p>`;
+            }
+
+            if (lab === "BRW") {
+                window.location.href = "BRWLab.html"; // Redirect to BRWLab.html for BRW
+            } else {
+                graphContainer.innerHTML = `<h2>Graph for ${lab}</h2>
+                                            <p>Graph data for ${lab} is currently not available.</p>`;
+            }
+
+            if (lab === "BSC") {
+                window.location.href = "BSCLab.html"; // Redirect to BSCLab.html for BSC
+            } else {
+                graphContainer.innerHTML = `<h2>Graph for ${lab}</h2>
+                                            <p>Graph data for ${lab} is currently not available.</p>`;
+            }
+
+            if (lab === "CBA") {
+                window.location.href = "CBALab.html"; // Redirect to CBALab.html for CBA
+            } else {
+                graphContainer.innerHTML = `<h2>Graph for ${lab}</h2>
+                                            <p>Graph data for ${lab} is currently not available.</p>`;
+            }
+
+            if (lab === "CGO") {
+                window.location.href = "CGOLab.html"; // Redirect to CGOLab.html for CGO
+            } else {
+                graphContainer.innerHTML = `<h2>Graph for ${lab}</h2>
+                                            <p>Graph data for ${lab} is currently not available.</p>`;
+            }
+
+            if (lab === "CHR") {
+                window.location.href = "CHRLab.html"; // Redirect to CHRLab.html for CHR
+            } else {
+                graphContainer.innerHTML = `<h2>Graph for ${lab}</h2>
+                                            <p>Graph data for ${lab} is currently not available.</p>`;
+            }
+
+            if (lab === "CIB") {
+                window.location.href = "CIBLab.html"; // Redirect to CIBLab.html for CIB
+            } else {
+                graphContainer.innerHTML = `<h2>Graph for ${lab}</h2>
+                                            <p>Graph data for ${lab} is currently not available.</p>`;
+            }
+
+            if (lab === "CPT") {
+                window.location.href = "CPTLab.html"; // Redirect to CPTLab.html for CPT
+            } else {
+                graphContainer.innerHTML = `<h2>Graph for ${lab}</h2>
+                                            <p>Graph data for ${lab} is currently not available.</p>`;
+            }
+            
+            document.getElementById('suggestions').innerHTML = ''; // Clear suggestions
+            document.getElementById('search').value = ''; // Clear the search input
+        }
+    </script>
+
+    <div class='tableauPlaceholder' id='viz1728202413368' style='position: center'><noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;MA&#47;MAP_17282023985510&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='MAP_17282023985510&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;MA&#47;MAP_17282023985510&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1728202413368');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else { vizElement.style.width='100%';vizElement.style.height='727px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+</body>
+</html>

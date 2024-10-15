@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <br>
+    <br>
+    <br>
+    
+    <title>CO₂ Emissions</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+            box-sizing: border-box;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            opacity: 0.9;
+        }
+
+        h1, h2, h3 {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #2a2a2a;
+            position: fixed; /* Keep the header fixed on top */
+            top: 0;
+            width: 100%;
+            z-index: 1000; /* Ensure it's on top of other content */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+        }
+        header .logo {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        header nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        header nav ul li {
+            list-style: none;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            padding: 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            background-color: #007bff;
+            border-radius: 4px;
+        }
+
+        header .search-bar input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        header .search-bar button {
+            padding: 8px 12px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        h1{
+            text-align: center;
+            margin: 20px 0;
+            background-color:#28a745;
+        }
+
+        h2 {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .intro, .impact-section, .solutions-section {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .charts-section {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+
+        .chart {
+            width: 45%;
+            padding: 20px;
+        }
+
+        .chart canvas {
+            width: 100%;
+            height: auto;
+        }
+
+        .sources-section, .countries-section, .impact-section, .solutions-section {
+            margin-bottom: 50px;
+            text-align: left;
+        }
+
+        .cta {
+            text-align: center;
+            padding: 30px;
+            background-color: #28a745;
+            color: white;
+        }
+
+        .cta a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #007bff;
+            border-radius: 5px;
+        }
+
+        .resources {
+            padding: 30px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        .resources a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">Climate Change Data Hub</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Resouces.html">Resources</a></li>
+                <li><a href="contact_us.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div style="padding-right: 10%;" class="search-bar">
+        </div>
+    </header>
+
+       <div class="container">
+        
+        <!-- Introduction Section -->
+        <section class="intro">
+            <h1>CO₂ Emissions</h1>
+            <p>CO₂ emissions are one of the leading causes of climate change. Understanding and analyzing these emissions is critical to reducing global warming and its devastating impacts on the planet.</p>
+        </section>
+
+        <!-- Charts Section (Placeholder for Charts/Graphs) -->
+        <section class="charts-section">
+            <div class="chart">
+                <h2>CO₂ Emissions Over Time</h2>
+                <canvas id="co2EmissionsChart"></canvas>
+            </div>
+            <div class="chart">
+                <h2>CO₂ Emissions by Region</h2>
+                <canvas id="co2RegionChart"></canvas>
+            </div>
+        </section>
+
+               <section class="sources-section">
+            <h2>Sources of CO₂ Emissions</h2>
+            <p>CO₂ emissions primarily come from the burning of fossil fuels for energy, transportation, and industrial activities. The key sources include:</p>
+            <ul>
+                <li><strong>Energy Production</strong>: The largest source, accounting for over 40% of emissions, especially from coal and natural gas power plants.</li>
+                <li><strong>Transportation</strong>: Vehicles that rely on fossil fuels contribute to nearly 25% of global CO₂ emissions.</li>
+                <li><strong>Industry</strong>: Manufacturing, cement production, and chemical processes produce significant emissions.</li>
+                <li><strong>Agriculture</strong>: Livestock, soil management, and deforestation contribute to rising CO₂ levels.</li>
+            </ul>
+        </section>
+
+              <section class="countries-section">
+            <h2>Countries with Highest CO₂ Emissions</h2>
+            <p>Several countries contribute disproportionately to global CO₂ emissions. The top emitters include:</p>
+            <ul>
+                <li><strong>China</strong>: The world’s largest emitter, responsible for over 28% of global emissions.</li>
+                <li><strong>United States</strong>: The second-largest emitter, with approximately 15% of global emissions.</li>
+                <li><strong>India</strong>: Rapid industrialization has made India the third-largest emitter.</li>
+                <li><strong>European Union</strong>: Collectively responsible for around 9% of global emissions.</li>
+            </ul>
+        </section>
+
+        <!-- Global and Regional Data Section -->
+        <section class="data-section">
+            <h2>Global CO₂ Data</h2>
+            <p>In 2020, global CO₂ emissions reached 33 gigatons, with the highest contributions coming from energy production, transportation, and industry.</p>
+        </section>
+
+        <!-- Impact Section -->
+        <section class="impact-section">
+            <h2>Impact of CO₂ Emissions</h2>
+            <p>CO₂ emissions drive global warming, causing sea levels to rise, glaciers to melt, and more frequent extreme weather events. This results in environmental destruction and severe human impacts.</p>
+            <ul>
+                <li><strong>Melting Ice Caps:</strong> Causing sea level rise and threatening coastal areas.</li>
+                <li><strong>Heatwaves:</strong> Increasing in frequency and severity, impacting agriculture and health.</li>
+                <li><strong>Ocean Acidification:</strong> CO₂ dissolves in oceans, making the water more acidic and affecting marine life.</li>
+            </ul>
+        </section>
+
+        <!-- Solutions to Reduce CO₂ -->
+        <section class="solutions-section">
+            <h2>Solutions to Reduce CO₂ Emissions</h2>
+            <p>Many solutions are being pursued globally to address rising CO₂ emissions:</p>
+            <ul>
+                <li><strong>Renewable Energy:</strong> Transitioning to wind, solar, and hydropower reduces reliance on fossil fuels.</li>
+                <li><strong>Energy Efficiency:</strong> Reducing energy consumption in homes, buildings, and industries can lower emissions.</li>
+                <li><strong>Carbon Capture:</strong> Technologies that capture and store CO₂ from power plants and industrial processes.</li>
+                <li><strong>Afforestation:</strong> Planting trees to absorb CO₂ from the atmosphere.</li>
+            </ul>
+        </section>
+
+       
+        <section class="cta">
+            <h2>Join the Fight Against Climate Change</h2>
+            <p>Take action to reduce your carbon footprint. Learn how you can contribute to lowering CO₂ emissions today.</p>
+            <a >Take Action Now</a>
+        </section>
+        
+    </div>
+
+    <!-- Internal JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // CO₂ Emissions Over Time Chart
+        var ctx1 = document.getElementById('co2EmissionsChart').getContext('2d');
+        var co2EmissionsChart = new Chart(ctx1, {
+            type: 'line',
+            data: {
+                labels: ['2000', '2005', '2010', '2015', '2020'],
+                datasets: [{
+                    label: 'CO₂ Emissions (Gigatons)',
+                    data: [24, 26, 28, 30, 33],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // CO₂ Emissions by Region Chart
+        var ctx2 = document.getElementById('co2RegionChart').getContext('2d');
+        var co2RegionChart = new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: ['Asia', 'Europe', 'North America', 'South America', 'Africa'],
+                datasets: [{
+                    label: 'CO₂ Emissions (Gigatons)',
+                    data: [15, 8, 7, 2, 1],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

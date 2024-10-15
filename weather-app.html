@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our App Showcase</title>
+  
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #ff5733;
+            position: fixed; /* Keep the header fixed on top */
+            top: 0;
+            width: 100%;
+            z-index: 1000; /* Ensure it's on top of other content */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+        }
+        header .logo {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        header nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        header nav ul li {
+            list-style: none;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            padding: 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            background-color: #007bff;
+            border-radius: 4px;
+        }
+
+        header .search-bar input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        header .search-bar button {
+            padding: 8px 12px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+    /* header {
+      background-color: #ff5733;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    } 
+
+    h1 {
+      margin: 0;
+      font-size: 2.5em;
+    } */
+
+    .app-showcase {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #fff;
+    }
+
+    h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #ff5733;
+    }
+
+    .image-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .image-gallery img {
+      max-width: 200px;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .image-gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .download-section {
+      margin-top: 30px;
+    }
+
+    .download-btn {
+      padding: 15px 30px;
+      background-color: #ff5733;
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-size: 1.2em;
+      transition: background-color 0.3s ease;
+    }
+
+    .download-btn:hover {
+      background-color: #c70039;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #333;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+   <!-- Header Section -->
+   <header>
+    <div class="logo">Weather  App</div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Resouces.html">Resources</a></li>
+            <li><a href="contact_us.html">Contact</a></li>
+            <li><a href="About.html">About</a></li>
+        </ul>
+    </nav>
+    <div style="padding-right: 20%;" class="search-bar">
+        <!-- <input type="text" placeholder="Search Climate Data...">
+        <button>Search</button> -->
+    </div> 
+</header>
+
+  <section class="app-showcase">
+    <br>
+    <br>
+    <h2>Explore Weather App Features</h2>
+    <div class="image-gallery">
+      <img src="Splash.jpg" alt="Splash Image">
+      <img src="Dubai.jpg" alt="Dubai Weather">
+      <img src="Delhi.jpg" alt="Delhi Weather">
+      
+    </div>
+    <div class="download-section">
+        
+      <a href="https://github.com/hiteshpatil2005/Weather-Forcasting-App/raw/refs/heads/main/WeatherApp.apk" download class="download-btn">Download Android App APK</a>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Your App. All rights reserved.</p>
+  </footer>
+</body>
+</html>

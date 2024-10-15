@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story of the Arctic Ocean</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f7fa;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        h1 {
+            color: #004d40; /* Darker teal */
+            margin-bottom: 20px;
+        }
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: center;
+            cursor: pointer;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .image-container {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border-bottom: 5px solid #00796b; /* Medium teal */
+            transition: transform 0.3s;
+        }
+        .story {
+            display: none; /* Initially hidden */
+            padding: 20px;
+            text-align: left;
+            border-top: 5px solid #00796b; /* Medium teal */
+        }
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <h1>Story of the Arctic Ocean</h1>
+    <div class="card" onclick="toggleStory()">
+        <div class="image-container">
+            <img src="Artic.jpg" alt="Arctic Ocean Image">
+        </div>
+        <h2>Discover the Challenges</h2>
+        <p>Click to read the story of how the Arctic Ocean is in trouble.</p>
+        <div class="story" id="story">
+            <h3>The Troubled Waters</h3>
+            <p>The Arctic Ocean, one of the planet's most fragile ecosystems, faces dire challenges due to climate change.</p>
+            <p>As CO2 levels rise, temperatures increase, leading to melting ice caps and threatening marine life.</p>
+            <p>This delicate balance is disrupted, and urgent action is needed to protect this vital part of our planet.</p>
+            <p></p>
+            <p></p>
+        </div>
+    </div>
+
+    
+
+    
+    <footer>
+        <p>&copy; 2024 Your Organization Name</p>
+    </footer>
+
+    <script>
+        function toggleStory() {
+            const story = document.getElementById('story');
+            if (story.style.display === "none" || story.style.display === "") {
+                story.style.display = "block";
+            } else {
+                story.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

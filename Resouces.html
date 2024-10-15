@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resource Link</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image:url("resBg.webp");
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 400px;
+        }
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #2a2a2a;
+            position: fixed; /* Keep the header fixed on top */
+            top: 0;
+            width: 100%;
+            z-index: 1000; /* Ensure it's on top of other content */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+        }
+        header .logo {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        header nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        header nav ul li {
+            list-style: none;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            padding: 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            background-color: #007bff;
+            border-radius: 4px;
+        }
+
+        header .search-bar input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        header .search-bar button {
+            padding: 8px 12px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        
+
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        p {
+            margin: 15px 0;
+            font-size: 18px;
+        }
+        a {
+            display: inline-block;
+            background-color: #ff7f50; /* Coral color */
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        a:hover {
+            background-color: #ff6347; /* Tomato color */
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">Climate Change Data Hub</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="contact_us.html">Contact</a></li>
+                <li><a href="weather-app.html">Weather App</a></li>
+            </ul>
+        </nav>
+        <div style="padding-right: 20%;" class="search-bar">
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Resource Link</h1>
+        <p>Here is the link to the resource you can use and we used in this website:</p>
+        <a href="https://gml.noaa.gov/dv/data/index.php?category=Greenhouse%252BGases&parameter_name=Carbon%252BDioxide&type=Flask&frequency=Discrete" target="_blank">Visit Resource</a>
+        <div class="footer">
+            <p>&copy; Nasa Dataset Resource</p>
+        </div>
+    </div>
+</body>
+</html>

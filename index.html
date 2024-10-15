@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climate Change Data Hub</title>
+    <style>
+        /* General Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+            box-sizing: border-box;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            opacity: 0.9;
+        }
+
+        h1, h2, h3 {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #2a2a2a;
+            position: fixed; /* Keep the header fixed on top */
+            top: 0;
+            width: 100%;
+            z-index: 1000; /* Ensure it's on top of other content */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+        }
+        header .logo {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        header nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        header nav ul li {
+            list-style: none;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            padding: 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            background-color: #007bff;
+            border-radius: 4px;
+        }
+
+        header .search-bar input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        header .search-bar button {
+            padding: 8px 12px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Hero Section Styles */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden; /* Prevent overflow issues with background */
+            color: white;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('BGimage.png'); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            filter: blur(6px); /* Blur effect applied to the background */
+            z-index: 1; /* Ensure it's behind the text */
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2; /* Ensure content is above the blurred background */
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons a {
+            display: inline-block;
+            margin: 10px;
+            padding: 12px 30px;
+            background-color: #28a745;
+            color: white;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero-buttons a.btn-secondary {
+            background-color: #007bff;
+        }
+
+        /* Introduction Section */
+        .introduction {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .introduction h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .introduction p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .introduction .read-more {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border-radius: 4px;
+        }
+
+        /* Featured Data Section */
+        .featured-data {
+            background-color: #f4f4f4;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .featured-data h2 {
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+
+        .data-cards {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .data-cards .card {
+            background-color: white;
+            padding: 20px;
+            width: 30%;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .data-cards .card h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .data-cards .card a {
+            color: #28a745;
+        }
+
+        .view-all {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 20px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 4px;
+        }
+
+        /* Climate Change Impacts Section */
+        .climate-impacts {
+            padding: 50px;
+            text-align: center;
+            background-color: #fff; /* Optional background for clarity */
+        }
+
+        .climate-impacts h2 {
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+
+        .impact-icons {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .impact-icons .icon {
+            width: 20%;
+            background-color: #e9e9e9;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+    
+
+        /* Footer Styles */
+        footer {
+            background-color: #2a2a2a;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        footer .footer-links {
+            margin-bottom: 20px;
+        }
+
+        footer .footer-links a {
+            color: #ccc;
+            margin: 0 10px;
+        }
+
+        footer .social-media a {
+            color: #fff;
+            margin: 0 10px;
+        }
+
+        footer .newsletter form {
+            margin-top: 20px;
+        }
+
+        footer .newsletter input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        footer .newsletter button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+
+        /* Featured Data Section Styles */
+        .featured-data {
+            padding-left: 10px;
+            padding-right: 10px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        .featured-data h2 {
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+
+        .data-cards {
+            display: flex;
+            justify-content: space-around;
+            overflow-x: auto; /* Enable horizontal scrolling */
+            
+        }
+
+        .card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 20px;
+            width: 30%; /* Adjust width as necessary */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+        }
+
+        .card:hover {
+            transform: translateY(-5px); /* Slightly lift the card on hover */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
+        }
+
+        .card img {
+            width: 100%; /* Make the image responsive */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 8px 8px 8px 8px; /* Round the top corners of the image */
+        }
+
+        .card h3 {
+            font-size: 22px;
+            margin: 15px 0 10px; /* Add margin to space out the title */
+        }
+
+        .card p {
+            font-size: 16px;
+            margin-bottom: 15px; /* Space out the paragraph from the link */
+        }
+
+        .view-all {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .view-all:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .data-cards {
+                flex-direction: column; /* Stack cards vertically on small screens */
+                align-items: center; /* Center align cards */
+            }
+
+            .card {
+                width: 90%; /* Full width on mobile */
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">Climate Change Data Hub</div>
+        <nav>
+            <ul>
+                <!-- <li><a href="index.html">Home</a></li> -->
+                <li><a href="About.html">About</a></li>
+                <li><a href="Resouces.html">Resources</a></li>
+                <li><a href="contact_us.html">Contact</a></li>
+                <li><a href="weather-app.html">Weather App</a></li>
+            </ul>
+        </nav>
+        <div style="padding-right: 3%;" class="search-bar">
+            <select id="search-options">
+                <option value="greenhouse-gases">Greenhouse Gases</option>
+                <option value="co2-emissions">CO2 Emissions</option>
+                <option value="methane">Methane</option>
+            </select>
+            <button onclick="searchData()">Search</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Unlocking the Power of Data to Fight Climate Change</h1>
+            <p>Explore comprehensive climate datasets to understand, visualize, and act on the climate crisis.</p>
+            <div class="hero-buttons">
+                <a href="visualization.html" class="btn-primary">Brief Visualisation</a>
+                <a href="Story.html" class="btn-secondary">Stories</a>
+                <a href="LabData.html" class="btn-primary">Laboratory Analysis</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="introduction">
+        <h2>What is Climate Change?</h2>
+        <p>Climate change refers to long-term shifts and alterations in temperature and weather patterns, primarily caused by human activities such as burning fossil fuels, deforestation, and large-scale industrial farming.</p>
+        <a href="ClimateChange.html" class="read-more">Read More</a>
+    </section>
+
+    <!-- Featured Data Section -->
+    <section class="featured-data">
+        <h2>Featured Data :-</h2>
+        <div class="data-cards">
+            <div class="card">
+                <img src="GNGases.jpg" alt="Green House Gases">
+                <h3>Green House Gases</h3>
+                <p>Explore trends in global temperatures over the last century.</p>
+                <a href="GreenHouse.html">View Data</a> 
+            </div>
+            <div class="card">
+                <img src="CO2.webp" alt="CO2 Emissions">
+                <h3>CO2 Emissions</h3>
+                <p>Analyze the rise of CO2 emissions and their impact on the environment.</p>
+                <a href="CO2.html">View Data</a>
+            </div>
+            <div class="card">
+                <img src="Methane.jpg" alt="Methane">
+                <h3>Methane</h3>
+                <p>How Methane is affecting the Green Earth.</p>
+                <a href="methane.html">View Data</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Climate Change Impacts Section -->
+    <section class="climate-impacts">
+        <h2>Climate Change Impacts</h2>
+        <div class="impact-icons">
+            <div class="card">
+                <img src="weather.jpg" alt="Methane">
+                <h3>Extreme Weather</h3>
+                <p>Increasing frequency of hurricanes, floods, and heatwaves.</p>
+            </div>
+            <div class="card">
+                <img src="sealevel.webp" alt="Methane">
+                <h3>Sea Level Rise</h3>
+                <p>Threatening coastal communities with flooding and erosion.</p>
+            </div>
+            <div class="card">
+                <img src="food.jpg" alt="Methane">
+                <h3>Food Security</h3>
+                <p>Impacting agriculture and food supply chains.</p>
+            </div>
+            <div class="card">
+                <img src="health.jpg" alt="Methane">
+                <h3>Health Risks</h3>
+                <p>Rising temperatures affecting human health.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer Section -->
+    <footer>
+        <div class="social-media">
+            <a>Twitter</a>
+            <a>Facebook</a>
+            <a>Instagram</a>
+        </div>
+        <br>
+        <div class="footer-links">
+            <a>Privacy Policy</a>
+            <a>Terms of Use</a>
+            <a>FAQ</a>
+        </div>
+        
+    </footer>
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80, // Adjust offset if needed (e.g., header height)
+                        behavior: 'smooth' // Smooth scroll effect
+                    });
+                }
+            });
+        });
+    </script>
+
+    <!-- JavaScript for Search Functionality -->
+    <script>
+        function searchData() {
+            const selectedOption = document.getElementById("search-options").value;
+
+            if (selectedOption === "greenhouse-gases") {
+                window.location.href = "GreenHouse.html";
+            } else if (selectedOption === "co2-emissions") {
+                window.location.href = "CO2.html";
+            } else if (selectedOption === "methane") {
+                window.location.href = "methane.html";
+            }
+        }
+    </script>
+    
+
+</body>
+</html>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Climate Change Data Hub</title>
+    <style>
+        /* General Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+            box-sizing: border-box;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            opacity: 0.9;
+        }
+
+        h1, h2, h3 {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #2a2a2a;
+            position: fixed; /* Keep the header fixed on top */
+            top: 0;
+            width: 100%;
+            z-index: 1000; /* Ensure it's on top of other content */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+        }
+        header .logo {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        header nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        header nav ul li {
+            list-style: none;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            padding: 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            background-color: #007bff;
+            border-radius: 4px;
+        }
+
+        header .search-bar input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        header .search-bar button {
+            padding: 8px 12px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            opacity: 0.8;
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 10px;
+        }
+
+        /* Fixed Header Section */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px; /* Adjusted padding to align perfectly */
+            background-color: #2a2a2a;
+            color: #fff;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 2px -2px gray;
+        }
+
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        header nav ul {
+            display: flex;
+            list-style-type: none;
+        }
+
+        header nav ul li {
+            margin-right: 20px;
+        }
+
+        header nav ul li a {
+            color: #fff;
+        }
+
+        /* About Us Page Styles */
+        .about-container {
+            padding: 100px 50px 50px; /* Adjusted padding to make space for fixed header */
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-container h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .about-container p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        /* Mission Section */
+        .mission-section {
+            background-color: #f4f4f4;
+            padding: 50px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .mission-section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .mission-section p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .team-section h2 {
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+
+        .team-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .team-member {
+            width: 30%;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .team-member img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            margin-bottom: 10px;
+        }
+
+        .team-member h3 {
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+
+        .team-member p {
+            font-size: 16px;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #2a2a2a;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer .footer-links a {
+            color: #ccc;
+            margin: 0 10px;
+        }
+
+        footer .social-media a {
+            color: #fff;
+            margin: 0 10px;
+        }
+
+        
+
+        .team-member {
+            background: rgba(255, 255, 255, 0.8); /* Light background for each member */
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            width: 200px; /* Set a fixed width for each member */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow for individual members */
+            padding-left: 15px ;
+            padding-right: 15px;
+        }
+
+        .team-member img {
+            width: 100px; /* Adjust size as necessary */
+            height: 100px; /* Adjust size as necessary */
+            border-radius: 50%; /* Make the image circular */
+        }
+
+        
+
+        /* Team Member Animation Styles */
+            .team-member {
+                width: 30%;
+                margin-bottom: 20px;
+                text-align: center;
+                transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for scaling and shadow */
+                opacity: 0; /* Initial opacity for fade-in */
+                transform: translateY(20px); /* Initial position for fade-in */
+            }
+
+            .team-member:hover {
+                transform: scale(1.05); /* Scale up on hover */
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+            }
+
+            /* Fade-in effect */
+            .fade-in {
+                opacity: 1; /* Fully visible */
+                transform: translateY(0); /* Reset position */
+                transition: opacity 0.5s ease, transform 0.5s ease; /* Transition for fade-in */
+            }
+
+
+    </style>
+</head>
+<body>
+
+   <!-- Header Section -->
+   <header>
+    <div class="logo">Climate Change Data Hub</div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Resouces.html">Resources</a></li>
+            <li><a href="contact_us.html">Contact</a></li>
+            <li><a href="weather-app.html">Weather App</a></li>
+        </ul>
+    </nav>
+    <div style="padding-right: 20%;" class="search-bar">
+        <!-- <input type="text" placeholder="Search Climate Data...">
+        <button>Search</button> -->
+    </div> 
+</header>
+
+    <!-- About Us Container -->
+    <div class="about-container">
+        <h1>About Climate Change Data Hub</h1>
+        <p>Climate Change Data Hub was created to be a comprehensive, data-driven platform aimed at providing accurate and up-to-date information on climate change. We believe that access to reliable data is the first step in making informed decisions and taking meaningful action against the growing threat of climate change. Whether you're a scientist, policymaker, educator, or concerned citizen, our goal is to empower you with the tools to analyze, visualize, and act on climate data.</p>
+        
+        <p>Climate change is one of the most pressing global challenges of our time, affecting ecosystems, economies, and communities worldwide. Through our platform, we aim to make climate data accessible to everyone, helping individuals and organizations understand the scope of climate change and its impacts.</p>
+    </div>
+
+    <!-- Mission Section -->
+    <div class="mission-section">
+        <h2>Our Mission</h2>
+        <p>Our mission is to bridge the gap between complex climate data and practical solutions by making the information accessible, understandable, and actionable. We are committed to fostering collaboration between researchers, data scientists, and climate activists to drive positive change. By providing open access to global climate datasets, we aim to inspire data-driven decisions and policies that can combat climate change at every level.</p>
+    </div>
+
+    <!-- Team Section -->
+    <div class="team-section">
+        <h2>Meet Our Team</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="male_man_people_person_avatar_white_tone_icon_159363.webp" alt="Team Member 1">
+                <h3>Aditya Takle</h3>
+                <p>Leader</p>
+                <p>Leader and Data Analyser of the Team X-Y-Explorers </p>
+                
+            </div>
+            
+            <div class="team-member">
+                <img src="male_man_people_person_avatar_white_tone_icon_159363.webp" alt="Team Member 2">
+                <h3>Abhishek Sethi</h3>
+                <p>Front End Developer</p>
+                <p>The Front End Developer in Team X-Y Explorers.</p>
+            </div>
+        </div>
+        <br><br><br>
+
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="male_man_people_person_avatar_white_tone_icon_159363.webp" alt="Team Member 1">
+                <h3>Hitesh Patil</h3>
+                <p>Backend Developer</p>
+                <p>The Backend Developer in Team X-Y Explorers.</p>
+            </div>
+            <div class="team-member">
+                <img src="male_man_people_person_avatar_white_tone_icon_159363.webp" alt="Team Member 2">
+                <h3>Shriram Domal</h3>
+                <p>Website Designer</p>
+                <p>The Website Designer in Team X-Y Explorers.</p>
+            </div>
+            
+        </div>
+
+        
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-links">
+            <a>Home</a> |
+            <a >About</a> |
+            <a ></a>Data Explorer</a> |
+            <a >Contact</a>
+        </div>
+        <div class="social-media">
+            <a ></a>Facebook</a> |
+            <a >Twitter</a> |
+            <a >LinkedIn</a>
+        </div>
+        <p>&copy; 2024 Climate Change Data Hub</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const teamMembers = document.querySelectorAll('.team-member');
+            teamMembers.forEach((member, index) => {
+                setTimeout(() => {
+                    member.classList.add('fade-in');
+                }, index * 200); // Stagger the fade-in effect by 200ms for each member
+            });
+        });
+    </script>
+    
+
+</body>
+</html>

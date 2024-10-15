@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methane Emissions</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+            box-sizing: border-box;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            opacity: 0.9;
+        }
+
+        h1, h2, h3 {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #2a2a2a;
+            position: fixed; /* Keep the header fixed on top */
+            top: 0;
+            width: 100%;
+            z-index: 1000; /* Ensure it's on top of other content */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+        }
+        header .logo {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        header nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        header nav ul li {
+            list-style: none;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            padding: 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            background-color: #007bff;
+            border-radius: 4px;
+        }
+
+        header .search-bar input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        header .search-bar button {
+            padding: 8px 12px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        
+
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+            background-color:#28a745;
+        }
+
+        h2 {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .intro, .impact-section, .solutions-section {
+            text-align: center;
+            margin-bottom: 100px;
+            margin-top: 100px;
+        }
+
+        .charts-section {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+
+        .chart {
+            width: 45%;
+            padding: 20px;
+        }
+
+        .chart canvas {
+            width: 100%;
+            height: auto;
+        }
+
+        .sources-section, .countries-section, .impact-section, .solutions-section {
+            margin-bottom: 50px;
+            text-align: left;
+        }
+
+        .cta {
+            text-align: center;
+            padding: 30px;
+            background-color: #28a745;
+            color: white;
+        }
+
+        .cta a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #007bff;
+            border-radius: 5px;
+        }
+
+        .resources {
+            padding: 30px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        .resources a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">Climate Change Data Hub</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Resouces.html">Resources</a></li>
+                <li><a href="contact_us.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div style="padding-right: 20%;" class="search-bar">
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- Introduction Section -->
+        <section class="intro">
+            <h1>Methane Emissions</h1>
+            <p>Methane is a potent greenhouse gas that contributes significantly to global warming. Understanding its sources and impacts is crucial to mitigating its role in climate change.</p>
+        </section>
+
+        <!-- Charts Section (Placeholder for Charts/Graphs) -->
+        <section class="charts-section">
+            <div class="chart">
+                <h2>Methane Emissions Over Time</h2>
+                <canvas id="methaneEmissionsChart"></canvas>
+            </div>
+            <div class="chart">
+                <h2>Methane Emissions by Region</h2>
+                <canvas id="methaneRegionChart"></canvas>
+            </div>
+        </section>
+
+        <section class="sources-section">
+            <h2>Sources of Methane Emissions</h2>
+            <p>Methane emissions primarily come from natural and human activities. Key sources include:</p>
+            <ul>
+                <li><strong>Agriculture</strong>: Livestock, rice paddies, and manure management are major contributors.</li>
+                <li><strong>Energy</strong>: Methane leaks during the production and transport of coal, oil, and natural gas.</li>
+                <li><strong>Landfills</strong>: Decomposing organic waste in landfills emits significant amounts of methane.</li>
+                <li><strong>Wetlands</strong>: Natural methane emissions occur in wetlands due to organic matter breakdown in anaerobic conditions.</li>
+            </ul>
+        </section>
+
+        <section class="countries-section">
+            <h2>Countries with Highest Methane Emissions</h2>
+            <p>Several countries contribute significantly to global methane emissions. The top emitters include:</p>
+            <ul>
+                <li><strong>China</strong>: The largest methane emitter due to coal mining and agriculture.</li>
+                <li><strong>United States</strong>: Methane emissions mainly come from oil and gas production, agriculture, and landfills.</li>
+                <li><strong>India</strong>: Agriculture, particularly livestock and rice paddies, contributes to high methane emissions.</li>
+                <li><strong>Russia</strong>: Methane emissions largely stem from natural gas production and pipeline leaks.</li>
+            </ul>
+        </section>
+
+        <!-- Global and Regional Data Section -->
+        <section class="data-section">
+            <h2>Global Methane Data</h2>
+            <p>In 2020, global methane emissions reached over 570 million tons, with the highest contributions from agriculture, energy, and waste management sectors.</p>
+        </section>
+
+        <!-- Impact Section -->
+        <section class="impact-section">
+            <h2>Impact of Methane Emissions</h2>
+            <p>Methane emissions contribute to climate change by trapping heat in the atmosphere, causing a variety of environmental and human impacts:</p>
+            <ul>
+                <li><strong>Global Warming:</strong> Methane is 25 times more effective at trapping heat than CO₂ over a 100-year period.</li>
+                <li><strong>Air Quality:</strong> Methane contributes to ground-level ozone formation, impacting human health and ecosystems.</li>
+                <li><strong>Melting Permafrost:</strong> Methane release from thawing permafrost accelerates climate change.</li>
+            </ul>
+        </section>
+
+        <!-- Solutions to Reduce Methane -->
+        <section class="solutions-section">
+            <h2>Solutions to Reduce Methane Emissions</h2>
+            <p>Several strategies are available to reduce methane emissions:</p>
+            <ul>
+                <li><strong>Agriculture Practices:</strong> Improving livestock management and rice cultivation techniques can reduce methane emissions.</li>
+                <li><strong>Waste Management:</strong> Reducing organic waste in landfills and promoting recycling can limit methane emissions.</li>
+                <li><strong>Leak Detection:</strong> Implementing better leak detection and repair technologies for oil and gas operations.</li>
+                <li><strong>Biogas Capture:</strong> Capturing methane from landfills and livestock manure for use as renewable energy.</li>
+            </ul>
+        </section>
+    </div>
+
+    <!-- Internal JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Methane Emissions Over Time Chart
+        var ctx1 = document.getElementById('methaneEmissionsChart').getContext('2d');
+        var methaneEmissionsChart = new Chart(ctx1, {
+            type: 'line',
+            data: {
+                labels: ['2000', '2005', '2010', '2015', '2020'],
+                datasets: [{
+                    label: 'Methane Emissions (Million Tons)',
+                    data: [520, 540, 560, 580, 570],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Methane Emissions by Region Chart
+        var ctx2 = document.getElementById('methaneRegionChart').getContext('2d');
+        var methaneRegionChart = new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: ['Asia', 'North America', 'Europe', 'Africa', 'South America'],
+                datasets: [{
+                    label: 'Methane Emissions (Million Tons)',
+                    data: [210, 100, 60, 50, 40],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

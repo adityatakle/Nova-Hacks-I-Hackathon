@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+            box-sizing: border-box;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            opacity: 0.9;
+        }
+
+        h1, h2, h3 {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #2a2a2a;
+            position: fixed; /* Keep the header fixed on top */
+            top: 0;
+            width: 100%;
+            z-index: 1000; /* Ensure it's on top of other content */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+        }
+        header .logo {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        header nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        header nav ul li {
+            list-style: none;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            padding: 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            background-color: #007bff;
+            border-radius: 4px;
+        }
+
+        header .search-bar input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        header .search-bar button {
+            padding: 8px 12px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .contact-info p {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .form-field {
+            flex: 1 1 45%;
+            margin-bottom: 20px;
+        }
+
+        .form-field.full {
+            flex: 1 1 100%;
+        }
+
+        .form-field label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-field input, .form-field textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .form-field textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            text-align: center;
+        }
+
+        .submit-btn button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .submit-btn button:hover {
+            background-color: #218838;
+        }
+
+        .map {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .map iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #28a745;
+            color: white;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">Climate Change Data Hub</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Resouces.html">Resources</a></li>
+                <li><a href="weather-app.html">Weather App</a></li>
+                
+            </ul>
+        </nav>
+        <div style="padding-right: 15%;" class="search-bar">
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- Page Title -->
+        
+
+        <!-- Contact Information -->
+        <div class="contact-info">
+            <h2>C</h2><br>
+            <h1>Contact Us</h1>
+            
+            <p><strong>Email:</strong> ecstaticpare9@fearlessmails.com</p>
+            <p>Feel free to get in touch with us regarding any questions, concerns, or feedback.</p>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form">
+            <div class="form-field">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-field full">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required>
+            </div>
+            <div class="form-field full">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <div class="submit-btn full">
+                <button type="submit" id="submitBtn">Send Message</button>
+            </div>
+        </div>
+
+        <!-- Map Section (Google Maps Integration) -->
+        <div class="map">
+            <h2>your Location</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509639!2d144.95373531568065!3d-37.81627974202171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf0727dd81766a4a0!2sVictoria%20St%2C%20Melbourne%20VIC%203000%2C%20Australia!5e0!3m2!1sen!2sin!4v1602254622044!5m2!1sen!2sin" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 EcoClimate Initiative. All rights reserved. | <a href="/privacy-policy">Privacy Policy</a></p>
+    </div>
+
+    <!-- Internal JavaScript for form handling -->
+    <script>
+        document.getElementById('submitBtn').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Capture form data
+            let name = document.getElementById('name').value;
+            let email = document.getElementById('email').value;
+            let subject = document.getElementById('subject').value;
+            let message = document.getElementById('message').value;
+
+            // Simple validation to check if fields are filled
+            if (!name || !email || !subject || !message) {
+                alert('Please fill out all fields.');
+                return;
+            }
+
+            // Display a confirmation message
+            alert(`Thank you, ${name}! Your message has been received. We will get back to you at ${email}.`);
+
+            // Here you can send the form data to a server using AJAX, Fetch API, etc.
+            // For example, using fetch to send data to an API:
+            /*
+            fetch('/submit-form', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ name, email, subject, message }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                alert('Message sent successfully!');
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                alert('There was an error sending your message.');
+            });
+            */
+        });
+    </script>
+
+</body>
+</html>
