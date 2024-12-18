@@ -102,3 +102,6 @@ To run the Climate Change Data Hub locally, follow these steps:
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/adityatakle/Nova-Hacks-I-Hackathon.git
+
+To check out the website on web:
+https://www.adityatakle.co/
