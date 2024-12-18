@@ -105,3 +105,5 @@ To run the Climate Change Data Hub locally, follow these steps:
 
 To check out the website on web:
 https://www.adityatakle.co/
+OR
+https://nova-hacks-1-hackathon.vercel.app/
